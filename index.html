@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Forest Leeches – Quest to Seiwa Hills</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Press Start 2P', monospace;
+    }
+    
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    #game-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+      image-rendering: pixelated;
+    }
+    
+    /* Loading screen */
+    #loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      z-index: 1000;
+    }
+    
+    #progress-bar {
+      width: 80%;
+      max-width: 400px;
+      height: 20px;
+      margin-top: 20px;
+      background: #333;
+      border: 2px solid #555;
+      overflow: hidden;
+    }
+    
+    #progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #4CAF50;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="loading">
+      <h1>Forest Leeches</h1>
+      <p>Loading...</p>
+      <div id="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </div>
+    <div id="game-canvas"></div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
